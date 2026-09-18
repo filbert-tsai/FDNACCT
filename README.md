@@ -1,6 +1,6 @@
 # FDNACCT: Fundamentals of Accounting — Interactive Study Portal & Test Bank
 ### Departmental Review & Exam Preparation Platform
-**Instructor:** Prof. Filbert Richerd N. Ng Tsai  
+**Instructor:** Filbert Richerd N. Ng Tsai  
 **Course:** FDNACCT (Foundational Financial Accounting)  
 **Academic Year:** 2026–2027  
 
@@ -17,7 +17,7 @@
 ---
 
 ## 📚 Course Study Guides & Master PDFs
-Directly download the official study guides authored and prepared by Prof. Filbert Richerd N. Ng Tsai:
+Directly download the official study guides authored and prepared by Filbert Richerd N. Ng Tsai:
 
 | Resource | Description | Format |
 | :--- | :--- | :--- |
@@ -46,4 +46,4 @@ This repository is the central hub for all FDNACCT departmental exam preparation
 
 ---
 
-*Authored & Prepared by Prof. Filbert Richerd N. Ng Tsai • Department of Accountancy*
+*Authored & Prepared by Filbert Richerd N. Ng Tsai • Department of Accountancy*
