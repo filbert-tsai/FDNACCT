@@ -7,7 +7,7 @@
 ---
 
 ## 🌟 Access the Live Interactive Web Portal
-👉 **[Click Here to Launch the Live Interactive Review Portal](https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/)**  
+👉 **[Click Here to Launch the Live Interactive Review Portal](https://filbert-tsai.github.io/FDNACCT/)**  
 *(Replace with your live GitHub Pages link once activated)*
 
 - **No login or account required**: Opens immediately on laptops, tablets, and smartphones.
