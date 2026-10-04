@@ -8,7 +8,10 @@
 
 ## 🌟 Access the Live Interactive Web Portal
 👉 **[Click Here to Launch the Live Interactive Review Portal](https://filbert-tsai.github.io/FDNACCT/)**  
-*(Replace with your live GitHub Pages link once activated)*
+- **Quiz 1** (Modules 1–3): <https://filbert-tsai.github.io/FDNACCT/>
+- **Quiz 2** (Units 4.1–4.6, incl. Financial Solvers Lab): <https://filbert-tsai.github.io/FDNACCT/quiz2.html>
+
+Use the **📚 Quizzes** menu in the header to switch between portals.
 
 - **No login or account required**: Opens immediately on laptops, tablets, and smartphones.
 - **Instant Interactive Grading**: Get real-time feedback, detailed score tracking, and pedagogical explanations for every question.
@@ -40,7 +43,7 @@ If you are studying on the go or don't have internet access:
 ## 🗺️ Roadmap & Future Materials
 This repository is the central hub for all FDNACCT departmental exam preparation materials throughout the term:
 - [x] **Quiz 1 Mastery**: Units 1, 2, and 3 (383 Validated Items + Comprehensive Study Guides)
-- [ ] **Quiz 2 Prep**: The Accounting Cycle, Adjusting Entries, and Trial Balance Verification
+- [x] **Quiz 2 Prep**: Units 4.1–4.6 (Transaction Analysis, Journals & Ledgers, Notes, Merchandising) with Financial Solvers Lab and a 105-item Assessment Hub
 - [ ] **Quiz 3 Prep**: Merchandising Operations, Inventory Systems (Perpetual vs. Periodic), and Special Journals
 - [ ] **Departmental Finals Battery**: Comprehensive Multi-Unit Synthesis & Practice Mock Exams
 

@@ -1322,6 +1322,19 @@
         <div class="brand-subtitle">Foundational Financial Accounting • Authored &amp; Prepared by Filbert Richerd N. Ng Tsai • AY 2026–2027</div>
       </div>
       <div class="header-actions">
+        <div style="position: relative; display: inline-block;">
+          <button class="btn btn-secondary" onclick="document.getElementById('quizMenu').classList.toggle('show')" style="font-weight: 600;" title="Switch between quiz portals">
+            <span class="btn-text-desktop">📚 Quizzes ▾</span>
+            <span class="btn-text-mobile">📚 ▾</span>
+          </button>
+          <div id="quizMenu" class="dropdown-menu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 6px; background: var(--color-surface); border: 1px solid var(--color-border-utility); border-radius: var(--radius-md); box-shadow: 0 4px 20px rgba(0,0,0,0.18); z-index: 1000; min-width: 250px; padding: 6px 0;">
+            <a href="index.html" style="display:block;padding:8px 16px;color:var(--color-brand-orange);font-weight:700;text-decoration:none;font-size:12.5px;">✔ Quiz 1 <em style="font-weight:500;color:var(--color-text-muted);">· Modules 1–3</em></a>
+            <a href="quiz2.html" style="display:block;padding:8px 16px;color:var(--color-text-main);text-decoration:none;font-size:12.5px;font-weight:600;">Quiz 2 <em style="font-weight:500;color:var(--color-text-muted);">· Units 4.1–4.6</em></a>
+            <div style="border-top: 1px solid var(--color-border-utility); margin: 4px 0;"></div>
+            <span style="display:block;padding:8px 16px;font-size:12.5px;font-weight:600;color:var(--color-text-muted);cursor:default;">Quiz 3 <em style="font-weight:500;">· coming soon</em></span>
+            <span style="display:block;padding:8px 16px;font-size:12.5px;font-weight:600;color:var(--color-text-muted);cursor:default;">Finals <em style="font-weight:500;">· coming soon</em></span>
+          </div>
+        </div>
         <button class="btn btn-secondary" onclick="toggleTheme()" title="Toggle Dark/Light Mode">🌓</button>
         <div style="position: relative; display: inline-block;">
           <button class="btn btn-secondary" onclick="document.getElementById('pdfDropdownMenu').classList.toggle('show')" style="font-weight: 600;">
@@ -19075,6 +19088,15 @@ During the month, the owner also withdrew Php 15,000 for personal use. What was 
 
     if (activeSubpageId) renderJumpGrid();
   }
+
+
+  // Auto-close header dropdown menus on outside click
+  window.addEventListener('click', (e) => {
+    document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+      const btn = menu.previousElementSibling;
+      if (!menu.contains(e.target) && !(btn && btn.contains(e.target))) menu.classList.remove('show');
+    });
+  });
 
   // Auto-close PDF dropdown menu on outside click
   window.addEventListener('click', (e) => {
