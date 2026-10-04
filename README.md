@@ -33,10 +33,25 @@ Directly download the official study guides authored and prepared by Filbert Ric
 
 ## 💻 How to Practice 100% Offline (Single-File App)
 If you are studying on the go or don't have internet access:
-1. Download **[`FDNACCT_Quiz_1_Interactive_Study_Portal.html`](FDNACCT_Quiz_1_Interactive_Study_Portal.html)** (or `index.html`).
+1. Download **[`FDNACCT_Quiz_1_Interactive_Study_Portal.html`](FDNACCT_Quiz_1_Interactive_Study_Portal.html)** (or `index.html`). For Quiz 2, download **[`quiz2.html`](quiz2.html)**.
 2. Double-click the downloaded file.
 3. It will open immediately in your web browser (Google Chrome, Microsoft Edge, Safari, Brave, or Firefox).
 4. **All interactive grading, question navigators, and explanations work 100% locally on your machine.**
+
+---
+
+## 🧭 Maintainer Notes: Repository Structure
+| File | Purpose |
+|---|---|
+| `index.html` | Quiz 1 portal (the original link, kept stable) |
+| `quiz2.html` | Quiz 2 portal (Units 4.1–4.6, Financial Solvers Lab, Assessment Hub) |
+| `FDNACCT_Quiz_1_Interactive_Study_Portal.html` | Offline copy of Quiz 1 (identical to `index.html`) |
+
+- Each portal is a **single self-contained HTML file** (no build step). Pushing to `main` republishes via GitHub Pages.
+- The header's **📚 Quizzes** dropdown (`#quizMenu`) switches between portals. It is a separate copy in each file, so update every portal when adding an entry.
+- Both portals share the theme preference (`localStorage` key `fdnacct_theme`) and the same CSS design tokens, so keep layout changes in sync.
+- **Adding Quiz 3 / Finals:** create `quiz3.html` (or `finals.html`) from the Quiz 2 file, then replace the greyed-out "coming soon" entry in each portal's `#quizMenu` with a link.
+- The Quiz 2 Assessment Hub follows the Canvas homework (Units 4.1–4.4: 36 items, 4.5: 15, 4.6: 30); extra practice items are labelled **Supplemental · Not in Canvas**. Practice scoring is 1 point per item.
 
 ---
 
