@@ -51,14 +51,14 @@ If you are studying on the go or don't have internet access:
 - The header's **📚 Quizzes** dropdown (`#quizMenu`) switches between portals. It is a separate copy in each file, so update every portal when adding an entry.
 - Both portals share the theme preference (`localStorage` key `fdnacct_theme`) and the same CSS design tokens, so keep layout changes in sync.
 - **Adding Quiz 3 / Finals:** create `quiz3.html` (or `finals.html`) from the Quiz 2 file, then replace the greyed-out "coming soon" entry in each portal's `#quizMenu` with a link.
-- The Quiz 2 Assessment Hub follows the Canvas homework (Units 4.1–4.4: 36 items, 4.5: 15, 4.6: 30); extra practice items are labelled **Supplemental · Not in Canvas**. Practice scoring is 1 point per item.
+- The Quiz 2 Assessment Hub features **210 total practice items**: official Canvas homework modules (Units 4.1–4.4: 51 items, 4.5: 18, 4.6: 36) and authentic **Past Departmental Examinations** for AY 2025–2026 Terms 1, 2, and 3 (35 items each: 10 True/False, 10 MCQ Theory, 15 Problem Solving). Extra practice items are labelled **Supplemental · Not in Canvas**. Practice scoring is 1 point per item.
 
 ---
 
 ## 🗺️ Roadmap & Future Materials
 This repository is the central hub for all FDNACCT departmental exam preparation materials throughout the term:
 - [x] **Quiz 1 Mastery**: Units 1, 2, and 3 (383 Validated Items + Comprehensive Study Guides)
-- [x] **Quiz 2 Prep**: Units 4.1–4.6 (Transaction Analysis, Journals & Ledgers, Notes, Merchandising) with Financial Solvers Lab and a 105-item Assessment Hub
+- [x] **Quiz 2 Prep**: Units 4.1–4.6 (Transaction Analysis, Journals & Ledgers, Notes, Merchandising) with Financial Solvers Lab and a **210-item Assessment Hub** (Canvas Homework Drills + AY2526 Terms 1, 2, & 3 Past Examinations)
 - [ ] **Quiz 3 Prep**: Merchandising Operations, Inventory Systems (Perpetual vs. Periodic), and Special Journals
 - [ ] **Departmental Finals Battery**: Comprehensive Multi-Unit Synthesis & Practice Mock Exams
 
