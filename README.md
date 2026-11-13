@@ -10,6 +10,7 @@
 👉 **[Click Here to Launch the Live Interactive Review Portal](https://filbert-tsai.github.io/FDNACCT/)**  
 - **Quiz 1** (Modules 1–3): <https://filbert-tsai.github.io/FDNACCT/>
 - **Quiz 2** (Units 4.1–4.6, incl. Financial Solvers Lab): <https://filbert-tsai.github.io/FDNACCT/quiz2.html>
+- **Quiz 3** (Unit 4.7 Adjusting Entries): <https://filbert-tsai.github.io/FDNACCT/quiz3.html>
 
 Use the **📚 Quizzes** menu in the header to switch between portals.
 
@@ -33,7 +34,7 @@ Directly download the official study guides authored and prepared by Filbert Ric
 
 ## 💻 How to Practice 100% Offline (Single-File App)
 If you are studying on the go or don't have internet access:
-1. Download **[`FDNACCT_Quiz_1_Interactive_Study_Portal.html`](FDNACCT_Quiz_1_Interactive_Study_Portal.html)** (or `index.html`). For Quiz 2, download **[`quiz2.html`](quiz2.html)**.
+1. Download **[`FDNACCT_Quiz_1_Interactive_Study_Portal.html`](FDNACCT_Quiz_1_Interactive_Study_Portal.html)** (or `index.html`). For Quiz 2, download **[`quiz2.html`](quiz2.html)**; for Quiz 3, **[`quiz3.html`](quiz3.html)**.
 2. Double-click the downloaded file.
 3. It will open immediately in your web browser (Google Chrome, Microsoft Edge, Safari, Brave, or Firefox).
 4. **All interactive grading, question navigators, and explanations work 100% locally on your machine.**
@@ -45,13 +46,15 @@ If you are studying on the go or don't have internet access:
 |---|---|
 | `index.html` | Quiz 1 portal (the original link, kept stable) |
 | `quiz2.html` | Quiz 2 portal (Units 4.1–4.6, Financial Solvers Lab, Assessment Hub) |
+| `quiz3.html` | Quiz 3 portal (Unit 4.7 Adjusting Entries: lectures 4.7.0–4.7.8, 95 flashcards, Assessment Hub) |
 | `FDNACCT_Quiz_1_Interactive_Study_Portal.html` | Offline copy of Quiz 1 (identical to `index.html`) |
 
 - Each portal is a **single self-contained HTML file** (no build step). Pushing to `main` republishes via GitHub Pages.
 - The header's **📚 Quizzes** dropdown (`#quizMenu`) switches between portals. It is a separate copy in each file, so update every portal when adding an entry.
 - Both portals share the theme preference (`localStorage` key `fdnacct_theme`) and the same CSS design tokens, so keep layout changes in sync.
-- **Adding Quiz 3 / Finals:** create `quiz3.html` (or `finals.html`) from the Quiz 2 file, then replace the greyed-out "coming soon" entry in each portal's `#quizMenu` with a link.
+- **Adding Finals:** create `finals.html` from the Quiz 3 file, then replace the greyed-out "coming soon" entry in each portal's `#quizMenu` with a link.
 - The Quiz 2 Assessment Hub features **315 total practice items**: official Canvas homework modules (Units 4.1–4.4: 51 items, 4.5: 18, 4.6: 36) and authentic **Past Departmental Examinations** for AY 2025–2026 Terms 1, 2, and 3 (35 items each: 10 True/False, 10 MCQ Theory, 15 Problem Solving), plus three **Simulated Quiz #2 papers** (Sets A, B, C; 35 items each, same format; written for this portal, not official departmental exams). Extra practice items are labelled **Supplemental · Not in Canvas**. Practice scoring is 1 point per item.
+- The Quiz 3 Assessment Hub features **325 total practice items**: official Canvas homework modules (HW #3.1–#3.5 and a Unit 4.7.8 capstone), **Past Departmental Examinations** for AY 2025–2026 Terms 1, 2, and 3 (35 items each), and three **Simulated Quiz #3 papers** (Sets A, B, C; written for this portal, not official departmental exams). Canvas items keep their original wording; where one is poorly worded, the explanation carries an instructor note. Quiz 3 has no Solvers Lab.
 
 ---
 
@@ -59,7 +62,7 @@ If you are studying on the go or don't have internet access:
 This repository is the central hub for all FDNACCT departmental exam preparation materials throughout the term:
 - [x] **Quiz 1 Mastery**: Units 1, 2, and 3 (383 Validated Items + Comprehensive Study Guides)
 - [x] **Quiz 2 Prep**: Units 4.1–4.6 (Transaction Analysis, Journals & Ledgers, Notes, Merchandising) with Financial Solvers Lab and a **315-item Assessment Hub** (Canvas Homework Drills + AY2526 Terms 1, 2, & 3 Past Examinations + 3 Simulated Quiz #2 papers)
-- [ ] **Quiz 3 Prep**: Unit 4.7 Adjusting Entries (accruals, deferrals, depreciation, doubtful accounts, merchandise inventory)
+- [x] **Quiz 3 Prep**: Unit 4.7 Adjusting Entries (accruals, deferrals, depreciation, doubtful accounts, merchandise inventory, worksheet) with 95 flashcards and a **325-item Assessment Hub** (Canvas Homework + AY2526 Terms 1, 2, & 3 Past Examinations + 3 Simulated Quiz #3 papers)
 - [ ] **Departmental Finals Battery**: Comprehensive Multi-Unit Synthesis & Practice Mock Exams
 
 ---
