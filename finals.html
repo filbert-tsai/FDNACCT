@@ -2320,6 +2320,9 @@
 #finalGrades [data-grade-actual][aria-pressed="true"] { background:var(--color-success-container); color:var(--color-success-text); border-color:var(--color-success); }
 #finalGrades [data-grade-warn] { grid-column:1 / -1; font-size:12px; color:var(--color-error-text); }
 #finalGrades #finalGradeTarget .filter-btn { min-width:48px; }
+#finalGrades [data-grade-gp] { display:inline-flex; align-items:center; flex-wrap:wrap; gap:6px; }
+#finalGrades [data-grade-need-note] { font-size:12px; color:var(--color-text-muted); white-space:nowrap; }
+#finalGrades #finalGradeNeededTable td { vertical-align:middle; }
 @media (max-width:720px) {
   #finalGrades [data-grade-row] { grid-template-columns:1fr auto; }
   #finalGrades [data-grade-pct] { text-align:left; }
@@ -2327,26 +2330,26 @@
 
 #fcTopicFilter { margin:12px 0; }
 #pane-flashcards #fcMasteredBtn[aria-pressed="true"] { background:var(--color-success-container); color:var(--color-success-text); border-color:var(--color-success); }
-#pane-exam [data-final-table] .badge, #pane-exam [data-final-mastery-change] { white-space:nowrap; }
-#pane-exam [data-final-table] [data-final-cell-label] { display:none; }
-#pane-exam [data-final-table] [data-final-mastery-track] { min-width:90px; }
+:is(#pane-exam, #pane-grades) [data-final-table] .badge, #pane-exam [data-final-mastery-change] { white-space:nowrap; }
+:is(#pane-exam, #pane-grades) [data-final-table] [data-final-cell-label] { display:none; }
+:is(#pane-exam, #pane-grades) [data-final-table] [data-final-mastery-track] { min-width:90px; }
 @media (max-width:1100px) {
   body:has(#pane-flashcards.active) #tocList [data-flash-unit-heading] { display:none; }
 }
 @media (max-width:600px) {
   #pane-exam [data-topic-row-label] { display:grid; justify-items:start; }
   #pane-exam [data-final-result-summary] .score-display-value { font-size:28px !important; line-height:1.2; white-space:normal; }
-  #pane-exam [data-final-table] { border:0; overflow:visible; }
-  #pane-exam [data-final-table] .data-table { min-width:0; background:transparent; }
-  #pane-exam [data-final-table] thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
-  #pane-exam [data-final-table] :is(table, tbody) { display:block; }
-  #pane-exam [data-final-table] tr { display:block; padding:6px 10px; margin:0 0 8px; border:1px solid var(--color-border-utility); border-radius:var(--radius-md); background:var(--color-surface); }
-  #pane-exam [data-final-table] thead tr { padding:0; margin:0; border:0; }
-  #pane-exam [data-final-table] td { display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap:8px; align-items:center; text-align:left; padding:5px 0; font-size:12px; border-inline:0; }
-  #pane-exam [data-final-table] td:first-child { display:block; font-weight:700; }
-  #pane-exam [data-final-table] td:not(:first-child) [data-final-cell-label] { display:block; color:var(--color-text-muted); font-weight:600; }
-  #pane-exam [data-final-table] td > span { min-width:0; overflow-wrap:anywhere; }
-  #pane-exam [data-final-table] [data-final-mastery-change] .badge { font-size:9px; padding-inline:5px; }
+  :is(#pane-exam, #pane-grades) [data-final-table] { border:0; overflow:visible; }
+  :is(#pane-exam, #pane-grades) [data-final-table] .data-table { min-width:0; background:transparent; }
+  :is(#pane-exam, #pane-grades) [data-final-table] thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+  :is(#pane-exam, #pane-grades) [data-final-table] :is(table, tbody) { display:block; }
+  :is(#pane-exam, #pane-grades) [data-final-table] tr { display:block; padding:6px 10px; margin:0 0 8px; border:1px solid var(--color-border-utility); border-radius:var(--radius-md); background:var(--color-surface); }
+  :is(#pane-exam, #pane-grades) [data-final-table] thead tr { padding:0; margin:0; border:0; }
+  :is(#pane-exam, #pane-grades) [data-final-table] td { display:grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap:8px; align-items:center; text-align:left; padding:5px 0; font-size:12px; border-inline:0; }
+  :is(#pane-exam, #pane-grades) [data-final-table] td:first-child { display:block; font-weight:700; }
+  :is(#pane-exam, #pane-grades) [data-final-table] td:not(:first-child) [data-final-cell-label] { display:block; color:var(--color-text-muted); font-weight:600; }
+  :is(#pane-exam, #pane-grades) [data-final-table] td > span { min-width:0; overflow-wrap:anywhere; }
+  :is(#pane-exam, #pane-grades) [data-final-table] [data-final-mastery-change] .badge { font-size:9px; padding-inline:5px; }
 }
 </style>
 </head><body>  <header>
@@ -3773,7 +3776,7 @@ function finalGradeLoad() {
     items[id] = {score: typeof row.score === 'string' ? row.score : '', actual: row.actual === true};
   }
   return {items, basis: saved.basis === 75 ? 75 : 70, target: FINAL_GRADE_SCALE.some(([, gp]) => gp === saved.target) ? saved.target : '2.0',
-    assume: typeof saved.assume === 'string' ? saved.assume : ''};
+  };
 }
 
 function finalGradeSave() {
@@ -3810,9 +3813,7 @@ function finalGradeCompute(state = finalGradeState) {
     }
   }
   const average = gradedWeight ? 100 * banked / gradedWeight : null;
-  const typed = finalGradeNumber(state.assume);
-  const assume = typed !== null ? Math.max(0, typed) : average ?? 80;
-  const contribution = row => row.share * (row.percent ?? assume) / 100;
+  const contribution = row => row.share * (row.percent ?? 0) / 100;
   const projected = rows.reduce((sum, row) => sum + contribution(row), 0);
   const others = rows.filter(row => row.id !== 'final').reduce((sum, row) => sum + contribution(row), 0);
   const finalRow = rows.find(row => row.id === 'final');
@@ -3822,7 +3823,7 @@ function finalGradeCompute(state = finalGradeState) {
     const points = Math.max(0, Math.ceil(raw - 1e-9));
     return {min, gp, label, points, secured: raw <= 0, reachable: points <= FINAL_GRADE_EXAM_POINTS};
   });
-  return {gradedWeight, banked, average, assume, assumeIsTyped: typed !== null, projected, others, finalRow, needed, filled, total: rows.length,
+  return {gradedWeight, banked, average, projected, others, finalRow, needed, filled, total: rows.length,
     blanks: rows.length - filled};
 }
 
@@ -3847,7 +3848,7 @@ function finalGradeRenderShell() {
   section.innerHTML = `
     <div class="tldr-box">
       <div class="tldr-title">How the grade calculator works</div>
-      <div class="tldr-content">Enter the score you received on each item; the total points follow Canvas. Tick <strong>Actual</strong> for scores you have already received; leave it unticked to simulate a score you expect. Weights follow the course syllabus. Your entries are saved in this browser only.</div>
+      <div class="tldr-content">Enter the score you received on each item; the total points follow Canvas. Tick <strong>Actual</strong> for scores you have already received; leave it unticked to simulate a score you expect. Any item left blank counts as 0, so enter a simulated score for every item you still expect to take. Weights follow the course syllabus. Your entries are saved in this browser only.</div>
     </div>
     <div data-grade-summary>
       <div class="tonal-box" data-grade-tile>
@@ -3877,12 +3878,6 @@ function finalGradeRenderShell() {
           <button type="button" class="filter-btn" value="75" aria-pressed="${finalGradeState.basis === 75}">Not on the scheduled date (out of 75)</button>
         </div>
       </fieldset>
-      <fieldset><legend><label for="finalGradeAssume">Score to assume for blank entries (%)</label></legend>
-        <div data-final-button-row>
-          <input id="finalGradeAssume" class="calc-input-field" type="text" inputmode="decimal" autocomplete="off" style="width:110px; min-width:0;" value="${finalEscape(finalGradeState.assume)}">
-          <span data-final-setup-copy id="finalGradeAssumeHint"></span>
-        </div>
-      </fieldset>
     </div>
     <h3>Final exam score needed for each grade</h3>
     <div id="finalGradeNeededTable"></div>
@@ -3903,7 +3898,6 @@ function finalGradeRenderShell() {
 function finalGradeOnInput(event) {
   const input = event.target;
   if (input.dataset.gradeScore) finalGradeState.items[input.dataset.gradeScore].score = input.value.trim();
-  else if (input.id === 'finalGradeAssume') finalGradeState.assume = input.value.trim();
   else return;
   finalGradeSave();
   finalGradeUpdate();
@@ -3947,19 +3941,19 @@ function finalGradeUpdate() {
     button.textContent = row.actual ? '✓ Actual' : 'Mark as actual';
     button.setAttribute('aria-label', (row.actual ? 'Actual score' : 'Simulated score') + ', toggle actual');
     section.querySelector(`[data-grade-pct="${id}"]`).innerHTML = percent === null
-      ? `<span class="badge">${row.actual ? 'No score yet' : 'Uses ' + finalGradeFmt(result.assume) + '%'}</span>`
+      ? `<span class="badge">${row.actual ? 'No score yet' : 'Counts as 0'}</span>`
       : `<span class="badge ${row.actual ? 'badge-green' : 'badge-blue'}">${row.actual ? 'Actual' : 'Simulated'} ${finalGradeFmt(percent)}%</span>`;
     let warning = '';
     if (row.score !== '' && (score === null || score < 0)) warning = 'Enter the score as a number, for example 42 or 42.5.';
     else if (score !== null && score > max) warning = `This item has ${max} points. The score is not counted until you correct it.`;
-    else if (row.actual && score === null) warning = 'Marked as actual but no score entered yet; it uses the assumed score for now.';
+    else if (row.actual && score === null) warning = 'Marked as actual but no score entered yet; it counts as 0 for now.';
     const warn = section.querySelector(`[data-grade-warn="${id}"]`);
     warn.hidden = !warning;
     warn.textContent = warning;
   }
 
   FINAL_GRADE_PARTS.forEach((part, index) => {
-    const average = part.items.reduce((sum, [id, , , max]) => sum + max * (finalGradeItemPercent(id) ?? result.assume), 0) / finalGradePartMax(part);
+    const average = part.items.reduce((sum, [id, , , max]) => sum + max * (finalGradeItemPercent(id) ?? 0), 0) / finalGradePartMax(part);
     finalElement('finalGradePart-' + index).textContent = 'Projected ' + finalGradeFmt(average) + '%';
   });
 
@@ -3969,7 +3963,7 @@ function finalGradeUpdate() {
     : `${gradeText(result.average)} if you keep this average · ${finalGradeFmt(result.banked)} of 100 grade points earned so far · ${finalGradeFmt(result.gradedWeight)}% of the course graded`;
   finalElement('finalGradeProjected').textContent = finalGradeFmt(result.projected) + '%';
   finalElement('finalGradeProjectedSub').textContent = `${gradeText(result.projected)} · ${result.blanks
-    ? result.blanks + (result.blanks === 1 ? ' blank entry counts' : ' blank entries count') + ' as ' + finalGradeFmt(result.assume) + '%'
+    ? result.blanks + (result.blanks === 1 ? ' blank entry counts' : ' blank entries count') + ' as 0'
     : 'all entries filled in'}`;
 
   const target = result.needed.find(row => row.gp === state.target);
@@ -3995,14 +3989,11 @@ function finalGradeUpdate() {
     ? finalCallout('Final Exam already recorded', 'Untick Actual on the Final Exam row to see the score needed for each grade.')
     : finalResponsiveTable(['Grade', 'Course percentage', 'Final Exam score needed', 'Final Exam percentage'],
       result.needed.map(row => [
-        `<span class="badge ${row.gp === state.target ? 'badge-orange' : ''}">${row.gp}</span> ${row.label}`,
+        `<span data-grade-gp><span class="badge ${row.gp === state.target ? 'badge-orange' : ''}">${row.gp}</span> ${row.label}${row.gp === state.target ? ' <span data-grade-need-note>(target)</span>' : ''}</span>`,
         row.min + '% and above',
-        row.secured ? '<span class="badge badge-green">Secured</span>' : row.reachable ? `<strong>${row.points} / 75</strong>` : '<span class="badge badge-red">Out of reach</span>',
-        row.secured ? '—' : row.reachable ? examPercent(row.points) : `Needs ${row.points} of 75`]));
+        row.secured ? '<span class="badge badge-green">Secured</span>' : row.reachable ? `<strong>${row.points} / 75</strong>` : `<span class="badge badge-red">Out of reach</span> <span data-grade-need-note>needs ${row.points}</span>`,
+        row.secured || !row.reachable ? '—' : examPercent(row.points)]));
 
-  finalElement('finalGradeAssumeHint').textContent = result.assumeIsTyped
-    ? `Blank entries count as ${finalGradeFmt(result.assume)}%. Clear the box to use your current average.`
-    : result.average === null ? 'Leave blank to use 80% until you have actual scores.' : `Leave blank to use your current average (${finalGradeFmt(result.average)}%).`;
   section.querySelectorAll('#finalGradeTarget button').forEach(button => finalSetPressed(button, button.value === state.target));
   section.querySelectorAll('#finalGradeBasis button').forEach(button => finalSetPressed(button, Number(button.value) === state.basis));
 }
