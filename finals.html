@@ -2405,11 +2405,6 @@
       <ul class="toc-list" id="tocList">
         <!-- Dynamically populated by JS engine -->
       </ul>
-      <div style="margin-top:20px; padding-top:12px; border-top:1px solid var(--color-border-utility);">
-        <button class="btn btn-secondary" style="width:100%; font-size:12px;" onclick="window.print()">
-          🖨️ Print / Save PDF
-        </button>
-      </div>
     </aside>
 
     <!-- Main Content Area -->
@@ -2507,7 +2502,6 @@
       <div id="finalAttemptActions" hidden>
         <span id="finalTimer" hidden></span>
         <button type="button" class="btn btn-primary" id="finalSubmit" hidden>Submit exam</button>
-        <button type="button" class="btn btn-secondary" id="finalPrint" onclick="window.print()" hidden>Print results</button>
         <div id="finalRegenerateGroup" hidden>
           <button type="button" class="btn btn-primary" id="finalRegenerate" hidden>Generate a new exam</button>
           <div id="finalRegenerateNote" hidden>Try another randomized mock</div>
@@ -3622,7 +3616,6 @@ function finalUpdateAttemptControls() {
   finalElement('finalSubmit').hidden = !inProgress;
   finalElement('finalTimer').hidden = !inProgress || !finalAttempt.timed;
   finalElement('finalNavigator').hidden = !inProgress;
-  finalElement('finalPrint').hidden = !finalAttempt?.review;
   finalElement('finalRegenerateGroup').hidden = finalElement('finalRegenerate').hidden = !finalAttempt?.review;
   finalElement('finalRegenerateNote').hidden = !finalAttempt?.mock;
   finalElement('finalReviewFilters').hidden = !finalAttempt?.review;
