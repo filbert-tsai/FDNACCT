@@ -11,6 +11,7 @@
 - **Quiz 1** (Modules 1–3): <https://filbert-tsai.github.io/FDNACCT/>
 - **Quiz 2** (Units 4.1–4.6, incl. Financial Solvers Lab): <https://filbert-tsai.github.io/FDNACCT/quiz2.html>
 - **Quiz 3** (Unit 4.7 Adjusting Entries): <https://filbert-tsai.github.io/FDNACCT/quiz3.html>
+- **Final Exam** (Units 1–4.12, incl. Mock Finals, Guided Case and Grade Calculator): <https://filbert-tsai.github.io/FDNACCT/finals.html>
 
 Use the **📚 Quizzes** menu in the header to switch between portals.
 
@@ -34,7 +35,7 @@ Directly download the official study guides authored and prepared by Filbert Ric
 
 ## 💻 How to Practice 100% Offline (Single-File App)
 If you are studying on the go or don't have internet access:
-1. Download **[`FDNACCT_Quiz_1_Interactive_Study_Portal.html`](FDNACCT_Quiz_1_Interactive_Study_Portal.html)** (or `index.html`). For Quiz 2, download **[`quiz2.html`](quiz2.html)**; for Quiz 3, **[`quiz3.html`](quiz3.html)**.
+1. Download **[`FDNACCT_Quiz_1_Interactive_Study_Portal.html`](FDNACCT_Quiz_1_Interactive_Study_Portal.html)** (or `index.html`). For Quiz 2, download **[`quiz2.html`](quiz2.html)**; for Quiz 3, **[`quiz3.html`](quiz3.html)**; for the Final Exam, **[`finals.html`](finals.html)**.
 2. Double-click the downloaded file.
 3. It will open immediately in your web browser (Google Chrome, Microsoft Edge, Safari, Brave, or Firefox).
 4. **All interactive grading, question navigators, and explanations work 100% locally on your machine.**
